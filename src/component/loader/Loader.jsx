@@ -88,11 +88,11 @@ export default function Loader({ onFinish }) {
       className="fixed inset-0 z-99999 flex flex-col justify-center items-center bg-neutral-950"
       style={{ color: "#fff7ed" }} 
     >
-      <div id="loader-content" className="flex flex-col items-center justify-center w-full max-w-5xl px-8 text-center">
+      <div id="loader-content" className="flex flex-col items-center justify-center w-full max-w-7xl px-8 text-center">
         
         {/* Larger, more prominent quote text */}
-        <p className="text-3xl md:text-3xl font-bold mb-12 leading-snug">
-          "{randomQuote}"
+        <p className="boldonse text-2xl md:text-3xl mb-12 leading-snug">
+            '{randomQuote}'' 
         </p>
 
         {/* tabular-nums keeps the width of the numbers identical so text doesn't wiggle */}
@@ -111,4 +111,4 @@ export default function Loader({ onFinish }) {
       </div>
     </div>
   );
-}
+};

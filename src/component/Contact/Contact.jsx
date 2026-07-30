@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import TextPressure from "../ui/TextPressure";
-import VariableProximity from "../ui/VariableProximity"
+import VariableProximity from "../ui/VariableProximity";
 import LocalTime from "../ui/LocalTime.jsx";
 
 const socials = [
