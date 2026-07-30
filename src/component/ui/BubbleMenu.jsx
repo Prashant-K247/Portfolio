@@ -59,6 +59,7 @@ export default function BubbleMenu({
   const overlayRef = useRef(null);
   const bubblesRef = useRef([]);
   const labelRefs = useRef([]);
+  const menuBtnRef = useRef(null);
 
   const menuItems = items?.length ? items : DEFAULT_ITEMS;
 
@@ -84,6 +85,30 @@ export default function BubbleMenu({
   const handleItemClick = () => {
     setIsMenuOpen(false);
   };
+  useEffect(() => {
+  if (!isMenuOpen) return;
+
+  const handleClickOutside = (e) => {
+    const overlay = overlayRef.current;
+    const menuBtn = menuBtnRef.current;
+
+    if (
+      overlay &&
+      !overlay.contains(e.target) &&
+      menuBtn &&
+      !menuBtn.contains(e.target)
+    ) {
+      setIsMenuOpen(false);
+      onMenuClick?.(false);
+    }
+  };
+
+  // mousedown fires before click, so it beats the button's own onClick toggle race
+  document.addEventListener('mousedown', handleClickOutside);
+  return () => document.removeEventListener('mousedown', handleClickOutside);
+}, [isMenuOpen, onMenuClick]);
+
+
   useEffect(() => {
     const overlay = overlayRef.current;
     const bubbles = bubblesRef.current.filter(Boolean);
@@ -263,6 +288,7 @@ export default function BubbleMenu({
           
         <button
           type="button"
+          ref={menuBtnRef}
           className={[
             'bubble toggle-bubble menu-btn',
             isMenuOpen ? 'open' : '',

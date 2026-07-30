@@ -138,7 +138,7 @@ export default function Experience() {
                 </p>
 
                 <p>
-                  • Contributed 60+ pull requests during the migration
+                  • Contributed 60+ code contribution during the migration
                   of the codebase from React to Next.js, improving
                   initial page load by 20%.
                 </p>

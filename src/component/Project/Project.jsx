@@ -102,7 +102,7 @@ export default function Project() {
         id="projects"
         className="min-h-screen bg-transparent text-white py-24"
       >
-        <div className="px-10 md:px-20 mb-15">
+        <div className="px-10 md:px-20 mb-20">
           <p className="uppercase tracking-[0.3em] text-neutral-400 mb-1">
             Selected Work
           </p>
@@ -112,7 +112,7 @@ export default function Project() {
           </h2>
         </div>
 
-        <div className="h-140 overflow-hidden">
+        <div className="h-150 overflow-hidden">
           <FlowingMenu
             items={projects}
             speed={7}
