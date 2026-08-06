@@ -101,13 +101,29 @@ export default function LiquidCursor() {
       if (raf.current !== null) cancelAnimationFrame(raf.current);
     };
   }, []);
+  
+  useEffect(() => {
+    const node = lensRef.current;
+    if (!node) return;
+
+    const supportsSvgFilter =
+      CSS.supports('backdrop-filter', 'url("#a")') ||
+      CSS.supports('-webkit-backdrop-filter', 'url("#a")');
+
+    const filterValue = supportsSvgFilter
+      ? 'url("#glass-distort") blur(0.5px) saturate(1.3) brightness(1.08)'
+      : 'blur(8px) saturate(1.4) brightness(1.1)';
+
+    node.style.backdropFilter = filterValue;
+    node.style.webkitBackdropFilter = filterValue;
+  }, []);
 
   return (
     <>
       {FilterDefinition}
       <div
         ref={lensRef}
-        className="liquid-lens pointer-events-none fixed left-0 top-0 z-[9999] h-[120px] w-[120px] rounded-xl opacity-0 transition-opacity duration-200 will-change-transform max-[768px]:hidden"
+        className="liquid-lens pointer-events-none fixed left-0 top-0 z-9999 h-30 w-30 rounded-xl opacity-0 transition-opacity duration-200 will-change-transform max-[768px]:hidden"
         aria-hidden="true"
       />
     </>
