@@ -107,7 +107,7 @@ export default function LiquidCursor() {
       {FilterDefinition}
       <div
         ref={lensRef}
-        className="liquid-lens pointer-events-none fixed left-0 top-0 z-9999 h-30 w-30 rounded-xl opacity-0 transition-opacity duration-200 will-change-transform max-[768px]:hidden"
+        className="liquid-lens pointer-events-none fixed left-0 top-0 z-[9999] h-[120px] w-[120px] rounded-xl opacity-0 transition-opacity duration-200 will-change-transform max-[768px]:hidden"
         aria-hidden="true"
       />
     </>
