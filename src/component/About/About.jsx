@@ -1,9 +1,9 @@
 import Shuffle from "../ui/Shuffle";
 
 export default function About() {
-  const heading = `I build products that solve problems, systems that scale.`;
+  const heading = `I build. I break. I fix. Repeat.`;
 
-  const para1 = `I'm a full-stack developer working across web platforms and AI systems. I build end-to-end products using Next.js and Node.js, with GenAI workflows powered by LangChain, modern LLM tooling and Vector Database.`;
+  const para1 = `I'm Prashant, a full-stack developer and ECE undergrad at IIIT Bhopal. I build things I'm curious about - backend systems, generative AI, MERN stack development - and ship them fast enough to still be excited when they're done.`;
 
   const para2 = `My work spans frontend engineering, backend development, and AI integration. From transforming Figma designs into responsive interfaces to building scalable APIs and intelligent AI workflows, I focus on creating products that are performant, intuitive, and built to last.`;
 
