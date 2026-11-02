@@ -121,7 +121,7 @@ export default function Experience() {
         </div>
 
         {/* Right Side - Experience Timeline */}
-        <div className="lg:col-span-9 space-y-8 lg:mt-36">
+        <div className="lg:col-span-9 space-y-8 lg:mt-40">
 
           {experiences.map((experience, index) => (
             <BorderGlow
